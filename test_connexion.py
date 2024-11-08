@@ -2,6 +2,7 @@
 import pytest
 import time
 import json
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -19,12 +20,19 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 class TestConnexion():
   def setup_method(self, method):
+    is_firefox = bool(os.getenv('IS_FIREFOX'))
     # service = Service(executable_path='/full/path/to/chromedriver')
     # options = ChromeOptions()
     # options.binary_location = '/full/path/to/chrome'
     # self.driver = webdriver.Chrome(options=options, service=service)
 #    self.driver = webdriver.Firefox()
-    self.driver = webdriver.Remote(command_executor='http://localhost:4444', options = FirefoxOptions())
+    options = None
+    if is_firefox:
+      options = FirefoxOptions()
+    else:
+      options = ChromeOptions()
+    self.driver = webdriver.Remote(command_executor='http://localhost:4444', options = options)
+
     self.vars = {}
   
   def teardown_method(self, method):
@@ -35,8 +43,9 @@ class TestConnexion():
     self.driver.find_element(By.ID, "identifier").click()
     self.driver.find_element(By.ID, "identifier").send_keys("gr")
     self.driver.find_element(By.ID, "register").click()
+    self.driver.save_screenshot('login-ok.png')
     result = self.driver.find_element(By.ID, "identifier").text
     expected = 'GR'
     assert result.lower() == expected.lower()
-    time.sleep(30)
+    time.sleep(10)
   
