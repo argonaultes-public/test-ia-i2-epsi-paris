@@ -1,0 +1,94 @@
+{
+  "id": "4b529f52-8ccc-4ef8-96aa-a66e30fe6ca9",
+  "version": "2.0",
+  "name": "newsletter-test",
+  "url": "http://127.0.0.1:5000",
+  "tests": [{
+    "id": "66b51c8b-9bfd-49a1-a982-78e988d6606e",
+    "name": "test-newsletter",
+    "commands": [{
+      "id": "1124eb88-669f-473a-8132-337b82644902",
+      "comment": "",
+      "command": "open",
+      "target": "/welcome",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fd83314-7581-4331-bab5-d64375430724",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "992x644",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2307452e-bdfd-49a2-9c54-1742f9f87e70",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Authentication')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b95f1e1-3825-4929-94ee-31aa03b45feb",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60adf7e6-2d8f-4e77-b30a-259272b95569",
+      "comment": "",
+      "command": "click",
+      "target": "id=identifier",
+      "targets": [
+        ["id=identifier", "id"],
+        ["name=identifier", "name"],
+        ["css=#identifier", "css:finder"],
+        ["xpath=//input[@id='identifier']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e5c1ce2-5c57-488d-aece-be3fdcb7844b",
+      "comment": "",
+      "command": "type",
+      "target": "id=identifier",
+      "targets": [
+        ["id=identifier", "id"],
+        ["name=identifier", "name"],
+        ["css=#identifier", "css:finder"],
+        ["xpath=//input[@id='identifier']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "AA"
+    }, {
+      "id": "f2313a4a-3bd1-4d08-a91a-9b81d6b0db8e",
+      "comment": "",
+      "command": "click",
+      "target": "id=register",
+      "targets": [
+        ["id=register", "id"],
+        ["css=#register", "css:finder"],
+        ["xpath=//input[@id='register']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "50957aae-1797-431f-a4a2-089a5516c3fc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["66b51c8b-9bfd-49a1-a982-78e988d6606e"]
+  }],
+  "urls": ["http://127.0.0.1:5000/"],
+  "plugins": []
+}

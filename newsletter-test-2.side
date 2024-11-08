@@ -1,0 +1,83 @@
+{
+  "id": "7fb4ee96-1364-4530-9bfd-fc7a574b6737",
+  "version": "2.0",
+  "name": "newsletter-test-2",
+  "url": "http://5a4ef7c4-984e-4687-a293-442a633b3c57.pub.instances.scw.cloud",
+  "tests": [{
+    "id": "03277e1b-bedf-4656-87a9-0683aa485d42",
+    "name": "connexion",
+    "commands": [{
+      "id": "2bd5aa6d-a24f-4ea6-948e-22197cbf6d34",
+      "comment": "",
+      "command": "open",
+      "target": "/welcome",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "43b7b526-542c-4d46-a248-29610a8320c9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1015x625",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f2dbdcf-31e5-4296-88aa-82596bba5bc3",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c86f8eb-bc08-4b64-8206-8eead05d2a7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=identifier",
+      "targets": [
+        ["id=identifier", "id"],
+        ["name=identifier", "name"],
+        ["css=#identifier", "css:finder"],
+        ["xpath=//input[@id='identifier']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70a3edbe-4d4c-4a56-8ccc-c3c37c2b2ab3",
+      "comment": "",
+      "command": "type",
+      "target": "id=identifier",
+      "targets": [
+        ["id=identifier", "id"],
+        ["name=identifier", "name"],
+        ["css=#identifier", "css:finder"],
+        ["xpath=//input[@id='identifier']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "GR"
+    }, {
+      "id": "92063561-398e-4392-bbb5-44970ec5514c",
+      "comment": "",
+      "command": "click",
+      "target": "id=register",
+      "targets": [
+        ["id=register", "id"],
+        ["css=#register", "css:finder"],
+        ["xpath=//input[@id='register']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4a036078-19cb-4955-a618-56f60f9d50a0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["03277e1b-bedf-4656-87a9-0683aa485d42"]
+  }],
+  "urls": [],
+  "plugins": []
+}
