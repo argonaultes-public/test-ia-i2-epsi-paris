@@ -14,13 +14,17 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service
 
+# add import firefox
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+
 class TestConnexion():
   def setup_method(self, method):
     # service = Service(executable_path='/full/path/to/chromedriver')
     # options = ChromeOptions()
     # options.binary_location = '/full/path/to/chrome'
     # self.driver = webdriver.Chrome(options=options, service=service)
-    self.driver = webdriver.Firefox()
+#    self.driver = webdriver.Firefox()
+    self.driver = webdriver.Remote(command_executor='http://localhost:4444', options = FirefoxOptions())
     self.vars = {}
   
   def teardown_method(self, method):
@@ -34,5 +38,5 @@ class TestConnexion():
     result = self.driver.find_element(By.ID, "identifier").text
     expected = 'GR'
     assert result.lower() == expected.lower()
-    time.sleep(10)
+    time.sleep(30)
   
